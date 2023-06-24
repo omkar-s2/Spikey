@@ -1,0 +1,43 @@
+.quote {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 30s steps(2000) infinite, textAnimation 5s 15s infinite; /* Updated animation duration and delay */
+  font-family: monospace;
+  font-weight: bold;
+  font-style: italic;
+  color: #c5b4c5;
+  margin-top: -20px;
+  font-size: 12px;
+}
+
+.quote::after {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes textAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 100%;
+  }
+  66%,
+  100% {
+    width: 100%;
+    white-space: normal;
+  }
+}
+
